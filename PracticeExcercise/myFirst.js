@@ -4,7 +4,7 @@
 
 function myMultiplier(x) {
   var product = 2 * x;
-  console.log(product);
+  //console.log(product);
 }
 myMultiplier();
 
