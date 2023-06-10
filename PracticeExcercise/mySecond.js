@@ -1,6 +1,6 @@
 function myMultiplier(y) {
   var prod = 3 * y;
-  console.log(prod);
+  return prod;
 }
 myMultiplier();
 
