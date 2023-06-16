@@ -1,0 +1,20 @@
+{
+  "name": "phase_3_practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1Sarry/Phase_3_Practice.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/1Sarry/Phase_3_Practice/issues"
+  },
+  "homepage": "https://github.com/1Sarry/Phase_3_Practice#readme"
+}

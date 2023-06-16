@@ -1,0 +1,18 @@
+What is DB?
+Organized collection of data stored in a computer system.
+
+  Spreadsheet Vs DB
+    - insufficient access control
+    - lack of creating collaboration
+    - Inability to hold large amount of data
+
+Managed by DBMS
+    - a SW for easy, efficient, and reliable db mngt 
+Relational
+ -Use relational model
+ -data related to one another
+ - Primary Key , Foreign key(to create assciation b/n tables taking primary key of one table and put it as a foreign key to the other table)
+ -
+NoSQL
+ -No table, instead document which have an object
+ -

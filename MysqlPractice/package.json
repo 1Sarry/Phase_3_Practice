@@ -1,14 +1,15 @@
 {
-  "name": "nodeserverproject",
+  "name": "mysqlpractice",
   "version": "1.0.0",
-  "description": "Building Node Server Practice",
-  "main": "index.js",
+  "description": "",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "nodemon": "^2.0.22"
+    "express": "^4.18.2",
+    "mysql": "^2.18.1"
   }
 }
