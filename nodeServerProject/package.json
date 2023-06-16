@@ -9,6 +9,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+<<<<<<< HEAD
     "nodemon": "^2.0.22"
+=======
+    "mime-types": "^2.1.35"
+>>>>>>> 5f09d55990bad65b66849d7302a85063aab59b48
   }
 }
