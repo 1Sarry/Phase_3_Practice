@@ -51,7 +51,7 @@ message if the connection is successful or if it has an error.
 //   console.log("Listening on port 7000");
 // });
 
-// Create and Execute Tables in Node
+// 2 Create and Execute Tables in Node
 
 /*
 
@@ -142,15 +142,15 @@ app.get("/install", (req, res) => {
   
 // dropping table column
 
-const dropCol = "ALTER TABLE Orders ADD COLUMN product_id int;" ;
-app.get("/saron", (req, res) => {
-  dbconnection.query(dropCol, (err, results, fields) =>{
-    if(err){
-      console.log(err)
-    }
-    res.end("product_id dropped")
-  })
-})
+// const dropCol = "ALTER TABLE Orders ADD COLUMN product_id int;" ;
+// app.get("/saron", (req, res) => {
+//   dbconnection.query(dropCol, (err, results, fields) =>{
+//     if(err){
+//       console.log(err)
+//     }
+//     res.end("product_id dropped")
+//   })
+// })
 
 
 // Add new column to Orders table
@@ -173,6 +173,20 @@ app.get("/saron", (req, res) => {
     user_password varchar(50) not null,
     PRIMARY KEY (user_id)
   )`;
+
+const deleteTableOrder = "DROP TABLE Orders";
+  app.get("/saron", (req, res) => {
+    dbconnection.query(deleteTableOrder, (err, results, fields) =>{
+      if(err){
+        console.log(err)
+      }
+      res.end("Deleted Successfully")
+    })
+  })
+
+
+
+
   dbconnection.query(createProd, (err, results, fields) => {
     if (err) {
       console.log(err);
