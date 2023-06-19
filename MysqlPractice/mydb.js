@@ -1,6 +1,7 @@
 const mysql = require("mysql");
 const express = require("express");
 var app = express();
+const bodyparser = require("body-parser");
 
 const mydbconnection = mysql.createConnection({
   host: "localhost",
@@ -136,3 +137,26 @@ app.get("/install", (req, res) => {
     }
   });
 });
+
+
+
+
+// Insert Product data
+
+// app.use(bodyparser.urlencoded({ extended: true }));
+// app.post("/addiphones", (req, res) => {
+//   console.log(req.body)
+//   let Url = req.body.pr_url;
+//   let Name =req.body.pr_name;
+
+//   let addToProd="INSERT INTO products (product_url, product_name) VALUES ('" + Url +
+//     "', '" +
+//     Name +
+//     "' )"
+
+//     mydbconnection.query(addToProd, (err, result) => {
+//       if(err) throw err;
+//       console.log("Record added")
+//     })
+//   res.end("You are good to go!");
+// });

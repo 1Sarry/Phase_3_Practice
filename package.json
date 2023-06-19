@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/1Sarry/Phase_3_Practice/issues"
   },
-  "homepage": "https://github.com/1Sarry/Phase_3_Practice#readme"
+  "homepage": "https://github.com/1Sarry/Phase_3_Practice#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2"
+  }
 }
