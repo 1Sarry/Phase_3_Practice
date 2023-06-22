@@ -1,19 +1,19 @@
 import React from "react";
 
-const Iphone11 = () => {
+const MacBook = () => {
   return (
     <div>
-      <section className="third-hightlight-wrapper">
+      <section className="second-hightlight-wrapper">
         <div className="container">
-          <div className="title-wraper bold">iPhone 11 Pro</div>
+          <div className="new-alert">New</div>
 
-          <div className="description-wrapper">
-            Pro cameras. Pro display. Pro performance.
+          <div className="title-wraper bold black">MacBook Air</div>
+
+          <div className="description-wrapper black">
+            Twice the speed. Twice the storage.
           </div>
 
-          <div className="price-wrapper">
-            From $24.95/mo. or $599 with trade‑in.
-          </div>
+          <div className="price-wrapper grey">From $999.</div>
 
           <div className="links-wrapper">
             <ul>
@@ -31,4 +31,4 @@ const Iphone11 = () => {
   );
 };
 
-export default Iphone11;
+export default MacBook;
