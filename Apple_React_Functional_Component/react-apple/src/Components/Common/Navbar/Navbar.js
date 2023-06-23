@@ -1,9 +1,8 @@
 import React from "react";
-import BrandLogo from "../../Images/Icons/logo-sm.png";
-import SearchIcon from "../../Images/Icons/search-icon-sm.png";
-import CartIcon from "../../Images/Icons/cart-sm.png";
-// import "../../commonResources/css/bootstrap.css"
-// import "../../index.css"
+import BrandLogo from "../../../Images/Icons/logo-sm.png";
+import SearchIcon from "../../../Images/Icons/search-icon-sm.png";
+import CartIcon from "../../../Images/Icons/cart-sm.png";
+import './Navbar.css'
 
 const Navbar = () => {
   return (
