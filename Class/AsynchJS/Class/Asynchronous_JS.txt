@@ -1,0 +1,18 @@
+JS is Single-threaded PL. JS engine executes one statment at a time.(This causes unnecessary delay - App will be slow )
+
+Synchronous_JS (Bolcking)
+ - The second line of code waits until the first line finishes execution.
+ Asynchronous_JS
+   - a means of unpluggubg one or more statments from the main synchronous step by step execution of the program and scheduling it to be processed in a latter time.
+   - Doesn't mean concurrent or multi-threaded.
+
+
+How to implement Asynchronous_JS
+1st .  > Callback: a function to be executed after another function has finished executing.
+  > Callback function : a function that is passed as an arg to another function
+  > Every callback is not asynchronous (methods like setTimeOut, setInterval methods make it a callback function)
+
+2nd . > Promise : an object that may produce a single  value some time in the future, either resolved or the reason that it is not resolved.
+      > Creating Promise - using constructor.
+
+  
