@@ -15,4 +15,26 @@ How to implement Asynchronous_JS
 2nd . > Promise : an object that may produce a single  value some time in the future, either resolved or the reason that it is not resolved.
       > Creating Promise - using constructor.
 
-  
+      Syntax let promise = new Promise(function(resolve, reject){
+                 ...    Executer Function
+      });
+
+  **PromiseState
+     - Fulfilled
+     - Pending
+     - Rejected
+  **PromiseResult
+
+  Methods to consume Promise
+
+1. then() takes two function arguments -resolved-rejected
+   -called on the object like ~~~ promise.then
+      - promise.then(
+        function(a){} // success result/ fulfilled
+        functiom(b){} // error result/ Rejected
+      )
+  we use then : first we check if our promise is fulfilled or not then we can add other things we want to have according to the promise o/p.
+
+2. catch()
+  if we want to focus on the error result only
+
