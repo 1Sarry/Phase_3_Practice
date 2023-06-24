@@ -26,11 +26,11 @@
 // })
 
 //console.log(promise);
-let promise = new Promise(function (resolve, reject) {
-  //resolve("Abebe");
-  reject("Not Abebe");
-});
-console.log(promise);
+// let promise = new Promise(function (resolve, reject) {
+//   //resolve("Abebe");
+//   reject("Not Abebe");
+// });
+// console.log(promise);
 
 // then
 
@@ -66,6 +66,15 @@ var willIGetNewPhone = new Promise(function (resolve, reject) {
   }
 });
 
-// then 
+// then
+var askMom = function () {
+  willIGetNewPhone
+   .then(function(fulfilled){
+    console.log(fulfilled);
+  });
+  willIGetNewPhone.catch(function(error){
+    console.log(error.message)
+  })
+};
 
-willIGetNewPhone.then()
+askMom();
