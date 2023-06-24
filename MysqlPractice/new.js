@@ -17,15 +17,15 @@ Please find further instructions under the “Instructions for question 1” bel
 // Create COnnection with Node - MySQL DB  db name = myDB    db user = myDBuser
 
 const Connection = mysql.createConnection({
-  // host: "localhost",
-  // user: "myDBuser",
-  // password: "123",
-  // database: "mydb",
-
   host: "localhost",
   user: "myDBuser",
   password: "123",
-  database: "mydb2",
+  database: "mydb",
+
+  // host: "localhost",
+  // user: "myDBuser",
+  // password: "123",
+  // database: "mydb2",
 });
 Connection.connect((err) => {
   if (err) {
