@@ -1,0 +1,69 @@
+ReactDOM
+  -to render what we have/jsx into the browser.
+  ReactDOM.render(<h1>hello<h1/>, document.getElementById("root"))
+  * what we want to render?
+  * where we want to render?
+  jsx element must have one parent element...
+//Vite to create react app
+
+index.js - ReactDOM.render(<h1><h1/>)
+ - help us to render(Method ) sth like html to the screen
+
+index.html 
+ - the root of the entire ap plication.
+//props
+
+
+//maps 
+
+a method in every array 
+takes a function as a parameter and what ever is returned from that function will be placed in the same index of a brand new array.
+we can use it to convert raw data into an array of JSX elements that can be desplayed on the page.  
+
+
+
+
+
+
+
+
+
+~~~ Vite
+Development File structure...(could be JS files- classes,functions, imports exports, packages, npm module, css,---> large development source code. => Bundler => it takes all of that and bundle it up into single js file(called bundle.js or main.js, this would be the production build (what CRA does so far using webpack under the hood. the issue is when we make a change it goes to the bundling process every single time...as the app grows and more packages installed it gets slow ) ) )
+ ~ a build tool, to bundle large file structure in to a production JS then to include it in browser.
+ ~ vite doesn't rebundle everything everytime we make changes
+ ~ it is a dev server rather than module bundler
+ ~ we don't need to bundle everything before starting the server. we can start the server and see our changes in the browser immediately and we don't have to wait for the files to be bundled.
+ ~ it update the browser in real-time
+
+ ~ npm create vite@latest my-vite-app
+ ~ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ *** Props
+  -make comonents reusable. 
+
+  - function addNum (){
+    return 1+2
+  }
+  function addNum (a, b){
+    return a+b
+  }....Reusable
+Object Destructuring: 
+
+*** We can insert values from js in jsx
+*** the things we write inside of curley braces will be run as regulat js
+*** out side or return 
