@@ -38,3 +38,9 @@ How to implement Asynchronous_JS
 2. catch()
   if we want to focus on the error result only
 
+3. Asynch-Await
+  - asynch and await key words
+  Asynch - creates promise when we put it infront of a function 
+  Await - makes JS wait until that promise settles and returns its result 
+
+
