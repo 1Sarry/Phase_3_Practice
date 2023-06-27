@@ -17,15 +17,15 @@ Please find further instructions under the “Instructions for question 1” bel
 // Create COnnection with Node - MySQL DB  db name = myDB    db user = myDBuser
 
 const Connection = mysql.createConnection({
-  host: "localhost",
-  user: "myDBuser",
-  password: "123",
-  database: "mydb",
-
   // host: "localhost",
   // user: "myDBuser",
   // password: "123",
-  // database: "mydb2",
+  // database: "mydb",
+
+  host: "localhost",
+  user: "myDBuser",
+  password: "123",
+  database: "mydb2",
 });
 Connection.connect((err) => {
   if (err) {
@@ -136,36 +136,36 @@ Question 3: Create an HTML file called, “index.html” with a form to populate
 // using bodyparser
 // parse data collect the data we enter on our browser(form) parseit into objects and send it to the webserver
 
-app.use(bodyparser.urlencoded({ extended: true }));
-app.post("/addiphones", (req, res) => {
-  console.log(req.body);
-  let Url = req.body.pr_url;
-  let Name = req.body.pr_name;
+// app.use(bodyparser.urlencoded({ extended: true }));
+// app.post("/addiphones", (req, res) => {
+//   console.log(req.body);
+//   let Url = req.body.pr_url;
+//   let Name = req.body.pr_name;
 
-  let addToProd =
-    "INSERT INTO products (product_url, product_name) VALUES ('" +
-    Url +
-    "', '" +
-    Name +
-    "' )";
+//   let addToProd =
+//     "INSERT INTO products (product_url, product_name) VALUES ('" +
+//     Url +
+//     "', '" +
+//     Name +
+//     "' )";
 
-  Connection.query(addToProd, (err, result) => {
-    if (err) throw err;
-    console.log("Record added");
-  });
-  res.end("You are good to go!");
-});
+//   Connection.query(addToProd, (err, result) => {
+//     if (err) throw err;
+//     console.log("Record added");
+//   });
+//   res.end("You are good to go!");
+// });
 
 //   res.end("You are good to go!");
 // });
 
-// using the latest built-in express method
-// app.use(app, json());
-// app.use(
-//   app.urlencoded({
-//     extended: true,
-//   })
-// );
+//using the latest built-in express method
+app.use(app, json());
+app.use(
+  app.urlencoded({
+    extended: true,
+  })
+);
 app.post("/addiphones", (req, res) => {
   console.table(req.body);
   const { Url, Name } = req.body;
