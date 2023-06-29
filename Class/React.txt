@@ -39,9 +39,19 @@ Development File structure...(could be JS files- classes,functions, imports expo
  ~ npm create vite@latest my-vite-app
  ~ 
 
+Arrray Destructuring: let [a, b] = [10, 20]
 
+var hero = {
+  name: 'Sarry',
+  realName: 'Saron'
+}
 
+var name = hero.name;
+var realName = hero.realName;
 
+// using object Destructuring _ It's equivalent to
+
+var {name, realName} = hero
 
 
 
@@ -67,3 +77,10 @@ Object Destructuring:
 *** We can insert values from js in jsx
 *** the things we write inside of curley braces will be run as regulat js
 *** out side or return 
+
+
+
+
+***** The return statement can only be used within function bodies
+In a plain function, the call to that function evaluates to the return value.
+In an async function, the produced promise is resolved with the returned value.
