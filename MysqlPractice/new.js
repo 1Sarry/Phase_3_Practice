@@ -17,15 +17,15 @@ Please find further instructions under the “Instructions for question 1” bel
 // Create COnnection with Node - MySQL DB  db name = myDB    db user = myDBuser
 
 const Connection = mysql.createConnection({
-  host: "localhost",
-  user: "myDBuser",
-  password: "123",
-  database: "mydb",
-
   // host: "localhost",
   // user: "myDBuser",
   // password: "123",
-  // database: "mydb2",
+  // database: "mydb",
+
+  host: "localhost",
+  user: "myDBuser",
+  password: "123",
+  database: "mydb2",
 });
 Connection.connect((err) => {
   if (err) {
@@ -145,7 +145,12 @@ Question 3: Create an HTML file called, “index.html” with a form to populate
 //   let Name = req.body.pr_name;
 
 //   let addToProd =
-//     "INSERT INTO products (product_url, product_name) VALUES ('" + Url + "', '" + Name + "' )";
+//     "INSERT INTO products (product_url, product_name) VALUES ('" +
+//     Url +
+//     "', '" +
+//     Name +
+//     "' )";
+
 //   Connection.query(addToProd, (err, result) => {
 //     if (err) throw err;
 //     console.log("Record added");
@@ -156,23 +161,13 @@ Question 3: Create an HTML file called, “index.html” with a form to populate
 //   res.end("You are good to go!");
 // });
 
-//let text = '"Abebe"'
-// using the latest built-in express method
-
-
-
-
-
-app.use(express.json())
-
+//using the latest built-in express method
+app.use(app, json());
 app.use(
   express.urlencoded({
     extended: true,
   })
 );
-
-
-
 app.post("/addiphones", (req, res) => {
   console.table(req.body);
   const { pr_url, pr_name } = req.body;
