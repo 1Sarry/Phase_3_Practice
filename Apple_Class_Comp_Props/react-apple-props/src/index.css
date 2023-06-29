@@ -1,13 +1,22 @@
+/* General Styling*/
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	font-family: 'Montserrat', sans-serif;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+a {
+	color: #06c; 
+}
+img {
+	max-width: 100%;
+}
+.white {
+	color: #fff;
+}
+.black {
+	color: #1d1d1f;
+}
+.grey {
+	color: #86868b;
+}
+.top-50 {
+	margin-top: 50px;
 }
