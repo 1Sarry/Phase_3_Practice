@@ -119,6 +119,8 @@ app.get("/install", (req, res) => {
   console.log("Table Created");
 });
 
+
+
 // Send POST req. from HTML Form to INSERT data into our table in our DB.
 
 /*
@@ -136,42 +138,56 @@ Question 3: Create an HTML file called, “index.html” with a form to populate
 // using bodyparser
 // parse data collect the data we enter on our browser(form) parseit into objects and send it to the webserver
 
-app.use(bodyparser.urlencoded({ extended: true }));
-app.post("/addiphones", (req, res) => {
-  console.log(req.body);
-  let Url = req.body.pr_url;
-  let Name = req.body.pr_name;
+// app.use(bodyparser.urlencoded({ extended: true }));
+// app.post("/addiphones", (req, res) => {
+//   console.log(req.body);
+//   let Url = req.body.pr_url;
+//   let Name = req.body.pr_name;
 
-  let addToProd =
-    "INSERT INTO products (product_url, product_name) VALUES ('" +
-    Url +
-    "', '" +
-    Name +
-    "' )";
-
-  Connection.query(addToProd, (err, result) => {
-    if (err) throw err;
-    console.log("Record added");
-  });
-  res.end("You are good to go!");
-});
+//   let addToProd =
+//     "INSERT INTO products (product_url, product_name) VALUES ('" + Url + "', '" + Name + "' )";
+//   Connection.query(addToProd, (err, result) => {
+//     if (err) throw err;
+//     console.log("Record added");
+//   });
+//   res.end("You are good to go!");
+// });
 
 //   res.end("You are good to go!");
 // });
 
+//let text = '"Abebe"'
 // using the latest built-in express method
-// app.use(app, json());
-// app.use(
-//   app.urlencoded({
-//     extended: true,
-//   })
-// );
+
+
+
+
+
+app.use(express.json())
+
+app.use(
+  express.urlencoded({
+    extended: true,
+  })
+);
+
+
+
 app.post("/addiphones", (req, res) => {
   console.table(req.body);
-  const { Url, Name } = req.body;
-  let insertProd = `INSERT INTO Products (Url, Name) VALUES (?, ?)`;
-  Connection.query(insertProd, [Url,Name], (err, result, fields) => {
+  const { pr_url, pr_name } = req.body;
+  // let Url = req.body.pr_url;
+  // let Name = req.body.pr_name;
+  //   let Name = req.body.pr_name;
+   // const Url = req.body.Url
+
+  let insertProd = `INSERT INTO Products (product_url, product_name) VALUES (?, ?)`;
+  Connection.query(insertProd, [pr_url, pr_name], (err, results, fields) => {
     if (err) console.log(`Error Found: ${err}`)
+     console.table(results)
   })
-  console.table(results)
+ 
+
+  res.end("Data Inserted Successfully")
 });
+

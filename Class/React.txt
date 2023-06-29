@@ -40,6 +40,14 @@ Development File structure...(could be JS files- classes,functions, imports expo
  ~ 
 
 
+Creating Object Using Constructor Function:-
+  - Object literal  const x ={ name: "lala", age: "1"}
+
+  - Constructor
+   
+
+
+
 
 
 
