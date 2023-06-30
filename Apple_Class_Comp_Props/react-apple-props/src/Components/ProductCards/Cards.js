@@ -3,23 +3,24 @@ import React, { Component } from "react";
 export default class Cards extends Component {
   render() {
     return (
-        <div class="left-side-wrapper col-sm-12 col-md-6">
-        <div class="left-side-container">
-          {/* <div class="title-wraper"></div> iPhone 11 */}
-          <div class="description-wraper">
-            Just the right amount of everything.
+        <div className= {`col-sm-12 col-md-6 ${ this.props.classLeft}`}>
+        <div className={this.props.classLeftCont}>
+          <div className={`title-wraper ${ this.props.classWhite}`}>{this.props.brand}</div> 
+          <div className="description-wraper">
+            {this.props.desc}
           </div>
-          <div class="price-wrapper">
-            From $18.70/mo. or $499 with trade‑in.<sup>1</sup>
+          <div className="price-wrapper">
+            {this.props.price}
+            <sup>{this.props.super2}</sup>
           </div>
 
-          <div class="links-wrapper">
+          <div className={`links-wrapper ${ this.props.classWhite}`}>
             <ul>
               <li>
-                <a href="">Learn more</a>
+                <a href="">{this.props.link1}</a>
               </li>
               <li>
-                <a href="">Apply now</a>
+                <a href="">{this.props.link2}</a>
               </li>
             </ul>
           </div>

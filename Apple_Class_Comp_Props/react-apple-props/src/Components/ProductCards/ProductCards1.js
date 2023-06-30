@@ -1,32 +1,33 @@
 import React, { Component } from "react";
+import Cards from "./Cards";
+import "./ProductCards.css"
 
 export default class ProductCards1 extends Component {
   render() {
     return (
-      <div>
-        <section class="fourth-heghlight-wrapper">
-          <div class="container-fluid">
-            <div class="row">
-             
-              {/* <div class="right-side-wrapper col-sm-12 col-md-6">
-                <div class="right-side-container">
-                  <div class="title-wraper white">
-                    Get the latest CDC response to COVID-19.
-                  </div>
-
-                  <div class="links-wrapper white">
-                    <ul>
-                      <li>
-                        <a href="">Watch the PSA</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div> */}
+        <section className="fourth-heghlight-wrapper">
+          <div className="container-fluid">
+            <div className="row">
+              <Cards
+              classLeft="left-side-wrapper"
+              classLeftCont="left-side-container"
+              brand="iPhone 11"
+              desc="Just the right amount of everything."
+              price="From $18.70/mo. or $499 with trade‑in."
+              super2="1"
+              link1="Learn More"
+              link2="Apply Now"
+              />
+              <Cards
+              classLeft="right-side-wrapper"
+              classLeftCont="right-side-container"
+              classWhite="white"
+              brand="Get the latest CDC response to COVID-19."
+              link1="Watch the PSA"
+              />
             </div>
           </div>
         </section>
-      </div>
     );
   }
 }
