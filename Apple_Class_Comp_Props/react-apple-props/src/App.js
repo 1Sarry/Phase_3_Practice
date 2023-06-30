@@ -4,6 +4,8 @@ import Alert from './Components/Alert/Alert';
 import AppleProduct from './Components/AppleProduct/AppleProduct';
 import NavBar from './Components/Common/NavBar/NavBar';
 import Footer from './Components/Common/Footer/Footer';
+import Cards from './Components/ProductCards/Cards';
+import ProductCards1 from './Components/ProductCards/ProductCards1';
 
 function App() {
   return (
@@ -42,6 +44,8 @@ function App() {
       BtnMore="Learn more"
       BtnBuy="Buy"
       />
+      {/* <Cards/> */}
+      <ProductCards1/>
 
       <Footer/>
     </div>

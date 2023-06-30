@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import "./NavBar.css"
 import BrandLogo from "../../Assets/Images/icons/logo-sm.png";
-import SearchIcon from "../../Assets/Images/icons/search-icon-sm.png";
-import CartIcon from "../../Assets/Images/icons/cart-sm.png";
+import NavItem from './NavItem';
+
 
 export default class NavBar extends Component {
   render() {
@@ -25,51 +25,24 @@ export default class NavBar extends Component {
 
             <div className="navbar-collapse collapse">
               <ul className="navbar-nav nav-justified w-100 nav-fill">
-                <li className="nav-item">
-                  <a className="nav-link js-scroll-trigger" href="/mac/">
-                    Mac
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link js-scroll-trigger" href="#">
-                    iphone
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link js-scroll-trigger" href="#">
-                    ipad
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link js-scroll-trigger" href="#">
-                    watch
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link js-scroll-trigger" href="#">
-                    tv
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link js-scroll-trigger" href="#">
-                    Music
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link js-scroll-trigger" href="#">
-                    Support
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link js-scroll-trigger" href="/search/">
-                    <img src={SearchIcon} />
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link js-scroll-trigger" href="/cart/">
-                    <img src={CartIcon} />
-                  </a>
-                </li>
+                <NavItem
+                item="Mac"/>
+                <NavItem
+                item="iphone"/>
+                <NavItem
+                item="ipad"/>
+                <NavItem
+                item="watch"/>
+                <NavItem
+                item="tv"/>
+                <NavItem
+                item="Music"/>
+                <NavItem
+                item="Support"/>
+                <NavItem
+                img="search-icon-sm.png"/>
+                <NavItem
+                img="cart-sm.png"/>
               </ul>
             </div>
           </nav>
