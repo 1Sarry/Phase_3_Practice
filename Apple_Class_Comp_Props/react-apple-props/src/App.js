@@ -6,6 +6,8 @@ import NavBar from './Components/Common/NavBar/NavBar';
 import Footer from './Components/Common/Footer/Footer';
 import Cards from './Components/ProductCards/Cards';
 import ProductCards1 from './Components/ProductCards/ProductCards1';
+import ProductCards2 from './Components/ProductCards/ProductCards2';
+import ProductCard3 from './Components/ProductCards/ProductCard3';
 
 function App() {
   return (
@@ -44,8 +46,10 @@ function App() {
       BtnMore="Learn more"
       BtnBuy="Buy"
       />
-      {/* <Cards/> */}
       <ProductCards1/>
+      <ProductCard3/>
+      <ProductCards2/>
+
 
       <Footer/>
     </div>
