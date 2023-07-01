@@ -82,3 +82,34 @@ Object Destructuring:
 ***** The return statement can only be used within function bodies
 In a plain function, the call to that function evaluates to the return value.
 In an async function, the produced promise is resolved with the returned value.
+
+
+
+States
+******
+
+JS Object that holds info that influences the o/p of render
+
+* Props is sth passed to the component like parameter in function // from the parent to the child
+ -cann't be changed by the component.
+* State is like a variable with in the component
+ - can be changed by the component
+ - used when we want to keep track of information during multiple rendering of a component 
+
+ Update Class state values
+ *************************
+
+ setState() method in React.Component already defined.
+
+LifeCycle Methods ---- 
+LifeCycle- Birth - Death
+         - Mounting - whenever a component is added and rendered on DOM
+         - Update - when the state of the component changes
+         - Unmount - whenever the component added on DOM is removed.
+
+https://www.w3schools.com/react/react_lifecycle.asp
+
+
+
+Questions
+// Can I use state and props interchangeably???
