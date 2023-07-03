@@ -113,3 +113,12 @@ https://www.w3schools.com/react/react_lifecycle.asp
 
 Questions
 // Can I use state and props interchangeably???
+
+
+
+Hooks
+
+* works only inside functional component.
+* only call hooks at top levels.
+* 
+--- useState()
