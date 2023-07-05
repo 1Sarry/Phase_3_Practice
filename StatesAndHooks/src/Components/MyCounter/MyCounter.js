@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./Counter.css";
 import CounterDisplayer from "./CounterDisplayer";
 import EvenCounterDisplyer from "./EvenCounterDisplyer";
-import ClickCounter from "./Test";
 export default class MyCounter extends Component {
   constructor() {
     super();
@@ -17,7 +16,7 @@ export default class MyCounter extends Component {
         count: state.count + 1,
       };
     });
-    console.log("count" + this.state.count);
+    //console.log("count" + this.state.count);
   };
   evenClicksCounter = () => {
     if (this.state.count % 2 !== 0) {
@@ -26,8 +25,8 @@ export default class MyCounter extends Component {
           evenCount: state.evenCount + 2,
         };
       });
-      console.log("count at if cond" + this.state.count);
-      console.log("countEvent" + this.state.evenCount);
+      //console.log("count at if cond" + this.state.count);
+      //console.log("countEvent" + this.state.evenCount);
     }
   };
 
@@ -35,6 +34,7 @@ export default class MyCounter extends Component {
     return (
       <div className="counter-wrapper">
         <div className="counter-btn">
+          <h1>States</h1>
           <button
             onClick={() => {
               this.allClicksCounter();
@@ -52,12 +52,20 @@ export default class MyCounter extends Component {
             }
           /> */}
           <EvenCounterDisplyer displayCount={this.state.evenCount} />
-          <ClickCounter />
+          
         </div>
       </div>
     );
   }
 }
+
+
+
+
+
+
+
+
 
 // import React, { Component } from "react";
 // import "./Counter.css";

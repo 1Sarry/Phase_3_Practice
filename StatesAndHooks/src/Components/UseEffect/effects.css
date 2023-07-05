@@ -1,10 +1,13 @@
 body {
   background-color: #e4e4e4;
 }
+.container-effect{
+  padding-top: 50px;
+}
 .valueHolder {
   background-color: #d1d1d1;
   padding: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 button {
   background-color: #024f7c;
@@ -16,4 +19,8 @@ button {
   display: inline-block;
   font-size: 16px;
   margin: 10px;
+  margin-bottom: 30px;
+}
+.effect-btn{
+  background-color: #02787c;
 }
