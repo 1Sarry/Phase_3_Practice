@@ -10,6 +10,8 @@ export default class MyCounter extends Component {
       evenCount: 0, // 0 - 2 - 2 -- 4
     };
   }
+
+
   allClicksCounter = () => {
     this.setState((state) => {
       return {
@@ -31,6 +33,21 @@ export default class MyCounter extends Component {
     }
   };
 
+
+
+
+  // evenClicksCounter = () => {
+  //   if (this.state.count % 2 !== 0) {
+  //     this.setState((state) => {
+  //       return {
+  //         evenCount: state.evenCount + 2,
+  //       };
+  //     });
+  //     //console.log("count at if cond" + this.state.count);
+  //   //console.log("countEvent" + this.state.evenCount);
+  //   }
+  // };
+
   render() {
     return (
       <div className="counter-wrapper">
@@ -39,20 +56,20 @@ export default class MyCounter extends Component {
           <button
             onClick={() => {
               this.allClicksCounter();
-              this.evenClicksCounter();
+              // this.evenClicksCounter();
             }}
           >
             Count: {this.state.count}
           </button>
           <CounterDisplayer displayCount={this.state.count} />
-          {/* <EvenCounterDisplyer
-            displayCount={
-              this.state.count % 2 === 0
-                ? this.state.count
-                : this.state.count - 1
+
+
+          <EvenCounterDisplyer
+           displayCount={
+              this.state.count % 2 === 0 ? this.state.count : this.state.count - 1
             }
-          /> */}
-          <EvenCounterDisplyer displayCount={this.state.evenCount} />
+          /> 
+          {/* <EvenCounterDisplyer displayCount={this.state.evenCount} /> */}
           
         </div>
       </div>
