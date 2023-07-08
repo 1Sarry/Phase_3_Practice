@@ -22,15 +22,17 @@ import UsingUseContext from "./Components/UseContext/UsingUseContext";
 import MyCounter from "./Components/MyCounter/MyCounter";
 import IncreaseDecreaseCount from "./Components/MyCounterHooks/IncreaseDecreaseCount";
 import UseEffectTitle from "./Components/UseEffectTitle";
+import ClassPractice from "./Components/ClassPractice";
 
 // First creat context
 export const MyContext = React.createContext();
 function App() {
   return (
     <div className="App">
-      <MyCounter />
-      <IncreaseDecreaseCount />
-      <UseEffectTitle/>
+      {/* <MyCounter />
+      <IncreaseDecreaseCount /> */}
+      {/* <UseEffectTitle/> */}
+      <ClassPractice/>
     </div>
   );
 }
