@@ -6,8 +6,8 @@ export default class MyCounter extends Component {
   constructor() {
     super();
     this.state = {
-      count: 0,
-      evenCount: 0,
+      count: 0, // 1 - 2 - 3 - 4
+      evenCount: 0, // 0 - 2 - 2 -- 4
     };
   }
   allClicksCounter = () => {
@@ -16,17 +16,18 @@ export default class MyCounter extends Component {
         count: state.count + 1,
       };
     });
-    //console.log("count" + this.state.count);
+    // console.log("count" + this.state.count);
   };
   evenClicksCounter = () => {
+
     if (this.state.count % 2 !== 0) {
       this.setState((state) => {
         return {
           evenCount: state.evenCount + 2,
         };
       });
-      //console.log("count at if cond" + this.state.count);
-      //console.log("countEvent" + this.state.evenCount);
+      console.log("count at if cond :" + this.state.count);
+      console.log("countEvent :" + this.state.evenCount);
     }
   };
 
