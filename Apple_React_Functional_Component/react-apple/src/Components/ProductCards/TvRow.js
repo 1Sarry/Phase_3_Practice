@@ -1,7 +1,7 @@
 import React from "react";
 import arcade from "../../commonResources/images/icons/arcade.png";
 
-const TvRow = () => {
+const TvRow = (props) => {
   return (
     <div>
       {" "}
@@ -12,25 +12,25 @@ const TvRow = () => {
               <div class="left-side-container">
                 <div class="top-logo-wrapper">
                   <div class="logo-wrapper">
-                    <img src={this.props.cardIcon} /> 
+                    <img src={props.cardIcon} /> 
                     {/* arcade */}
                   </div>
                 </div>
                 <div class="description-wraper white">
-                    {this.props.desc}
+                    {props.desc}
                   Agent 8 is a small hero on a big mission.
                 </div>
                 <div class="links-wrapper">
                   <ul>
                     <li>
-                      <a href="">{this.props.link1}
+                      <a href="">{props.link1}
 
-                        Play now<sup>2{this.props.super}</sup>
+                        Play now<sup>2{props.super}</sup>
                       </a>
                     </li>
                     <li>
                       <a href="">
-                        {this.props.link2}Learn about Apple Arcade</a>
+                        {props.link2}Learn about Apple Arcade</a>
                     </li>
                   </ul>
                 </div>
