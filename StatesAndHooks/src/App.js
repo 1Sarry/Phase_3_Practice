@@ -29,8 +29,8 @@ export const MyContext = React.createContext();
 function App() {
   return (
     <div className="App">
-      {/* <MyCounter />
-      <IncreaseDecreaseCount /> */}
+      <MyCounter />
+      <IncreaseDecreaseCount /> 
       {/* <UseEffectTitle/> */}
       <ClassPractice/>
     </div>

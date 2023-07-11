@@ -56,7 +56,7 @@ export default class MyCounter extends Component {
           <button
             onClick={() => {
               this.allClicksCounter();
-              // this.evenClicksCounter();
+              this.evenClicksCounter();
             }}
           >
             Count: {this.state.count}
