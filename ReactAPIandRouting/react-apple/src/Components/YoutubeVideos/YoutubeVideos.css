@@ -1,0 +1,22 @@
+.video-card-wrapper{
+   background-color: azure;
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   column-gap: 30px;
+}
+
+
+
+/*media queries*/
+ @media (max-width: 1024px) {
+    .video-card-wrapper{
+        grid-template-columns: repeat(2, 2fr);
+        row-gap: 15px;
+    }
+}
+@media (max-width: 768px) {
+    .video-card-wrapper{
+        grid-template-columns: repeat(1, 3fr);
+        row-gap: 15px;
+    }
+} 
