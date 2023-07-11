@@ -9,6 +9,7 @@ import GameCard from "./Components/ProductCards/GameCard";
 import TvRow from "./Components/ProductCards/TvRow";
 import Footer from "./Components/Common/Footer/Footer";
 import Navbar from "./Components/Common/Navbar/Navbar";
+import YoutubeVideos from "./Components/YoutubeVideos/YoutubeVideos";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <AppleCard/>
       <GameCard/>
       <TvRow/>
+      <YoutubeVideos/>
      <Footer/>
     </div>
   );
