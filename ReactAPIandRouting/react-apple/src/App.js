@@ -1,4 +1,3 @@
-
 import "./App.css";
 import Alert from "./Components/Alert/Alert";
 import Ipod from "./Components/Ipod/Ipod";
@@ -10,20 +9,19 @@ import TvRow from "./Components/ProductCards/TvRow";
 import Footer from "./Components/Common/Footer/Footer";
 import Navbar from "./Components/Common/Navbar/Navbar";
 import YoutubeVideos from "./Components/YoutubeVideos/YoutubeVideos";
-
+import { Routes, Route } from "react-router-dom";
+import Home from "./Pages/Home";
+import Iphones from "./Pages/Iphones";
 function App() {
   return (
     <div className="App">
-      <Navbar/>
-      <Alert />
-      <Ipod/>
-      <MacBook/>
-      <Iphone11/>
-      <AppleCard/>
-      <GameCard/>
-      <TvRow/>
-      <YoutubeVideos/>
-     <Footer/>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/iphone" element={<Iphones/>} />
+      </Routes>
+
+      <Footer />
     </div>
   );
 }

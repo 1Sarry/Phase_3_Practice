@@ -17,24 +17,24 @@ const YoutubeVideos = () => {
 
   //console.log(youTubeVids);
   return (
-    <div>
+    <div className="video-wrapper">
       <div className="container-fluid container  ">
         <h1 className="title-wraper bold black py-4 text-center">Latest Videos</h1>
         <div className="video-card-wrapper ">
-          {youTubeVids.map((vidData) => {
+          {youTubeVids?.map((vidData) => {
             let vidLink = `https://www.youtube.com/watch?v=${vidData.id.videoId}`;
             return (
               <div key={vidData.id.videoId} className="vid-card">
                 <div className="tumbnails">
                   <a href={vidLink}>
-                    <img src={vidData.snippet.thumbnails.default.url} alt="" />
+                    <img src={vidData.snippet.thumbnails.high.url} alt="" />
                   </a>
                 </div>
-                <div>
-                  <div className=" black title-wraper">
+                <div className="vid-details">
+                  <div className=" black title-wraper2">
                     <a href={vidLink}>{vidData.snippet.title}</a>
                   </div>
-                  <div className="gray description-wrapper">
+                  <div className="gray description-wrapper2">
                     <a href={vidLink} className="">
                       {vidData.snippet.description}
                     </a>
