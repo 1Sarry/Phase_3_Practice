@@ -16,7 +16,7 @@ const Home = () => {
       <Iphone11 />
       <AppleCard />
       <TvRow />
-      <YoutubeVideos />
+      {/* <YoutubeVideos /> */}
     </>
   );
 };

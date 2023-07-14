@@ -17,15 +17,12 @@ Please find further instructions under the “Instructions for question 1” bel
 // Create COnnection with Node - MySQL DB  db name = myDB    db user = myDBuser
 
 const Connection = mysql.createConnection({
-  // host: "localhost",
-  // user: "myDBuser",
-  // password: "123",
-  // database: "mydb",
-
   host: "localhost",
   user: "myDBuser",
   password: "123",
-  database: "mydb2",
+  database: "mydb",
+
+  
 });
 Connection.connect((err) => {
   if (err) {
@@ -33,6 +30,8 @@ Connection.connect((err) => {
   }
   console.log("Connected Successfully");
 });
+
+
 
 app.listen(4000, () => {
   console.log("Listening on Port 4000");
@@ -161,8 +160,12 @@ Question 3: Create an HTML file called, “index.html” with a form to populate
 //   res.end("You are good to go!");
 // });
 
+
+
 //using the latest built-in express method
-app.use(app, json());
+
+
+app.use(express.json());
 app.use(
   express.urlencoded({
     extended: true,
@@ -181,7 +184,13 @@ app.post("/addiphones", (req, res) => {
     if (err) console.log(`Error Found: ${err}`)
      console.table(results)
   })
- 
+
+  const {pr_id, pr_brief, pr_desc, pr_img, pr_link } = req.body;
+  let insertProdDesc = `INSERT INTO Products (product_id, product_brief_descrption, product_description, product_img, product_link) VALUES (?, ?, ?, ?, ?)`;
+  Connection.query(insertProdDesc, [pr_id, pr_brief, pr_desc, pr_img, pr_link], (err, results, fields) => {
+    if (err) console.log(`Error Found: ${err}`)
+     console.table(results)
+  })
 
   res.end("Data Inserted Successfully")
 });
