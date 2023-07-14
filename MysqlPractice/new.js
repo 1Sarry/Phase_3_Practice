@@ -186,7 +186,8 @@ app.post("/addiphones", (req, res) => {
   })
 
   const {pr_id, pr_brief, pr_desc, pr_img, pr_link } = req.body;
-  let insertProdDesc = `INSERT INTO Products (product_id, product_brief_descrption, product_description, product_img, product_link) VALUES (?, ?, ?, ?, ?)`;
+  console.log(req.body)
+  let insertProdDesc = `INSERT INTO ProductDescription (product_id, product_brief_descrption, product_description, product_img, product_link) VALUES (?, ?, ?, ?, ?)`;
   Connection.query(insertProdDesc, [pr_id, pr_brief, pr_desc, pr_img, pr_link], (err, results, fields) => {
     if (err) console.log(`Error Found: ${err}`)
      console.table(results)
