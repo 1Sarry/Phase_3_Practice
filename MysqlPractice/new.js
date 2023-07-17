@@ -1,8 +1,18 @@
 const mysql = require("mysql");
 const express = require("express");
 const bodyparser = require("body-parser");
+var cors = require("cors");
 
 var app = express();
+
+const options ={
+  origin: [
+    "http://localhost:4000",
+    "https://www.apple.com",
+  ]
+}
+
+app.use(cors());
 
 /*
 Question 1: Create a MySQL database by the name "myDB" and create a database user by
@@ -20,7 +30,7 @@ const Connection = mysql.createConnection({
   host: "localhost",
   user: "myDBuser",
   password: "123",
-  database: "mydb",
+  database: "db6",
 
   
 });
@@ -159,6 +169,7 @@ Question 3: Create an HTML file called, “index.html” with a form to populate
 
 //   res.end("You are good to go!");
 // });
+
 
 
 
