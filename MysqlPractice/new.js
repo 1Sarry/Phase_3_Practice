@@ -41,8 +41,6 @@ Connection.connect((err) => {
   console.log("Connected Successfully");
 });
 
-
-
 app.listen(4000, () => {
   console.log("Listening on Port 4000");
 });
@@ -94,20 +92,20 @@ app.get("/install", (req, res) => {
     PRIMARY KEY (price_id),
     FOREIGN KEY (product_id) REFERENCES Products(product_id)
   )`;
-  let ceateUser = `CREATE TABLE if not exists User(
-    user_id int(11) auto_increment,
-    user_name TEXT not null,
-    user_password varchar(255) not null,
-    PRIMARY KEY (user_id)
-  )`;
-  let createOrder = `CREATE TABLE if not exists Orders(
-    order_id int(11) auto_increment,
-    product_id int(11) not null,
-    user_id int(11) not null,
-    PRIMARY KEY (order_id),
-    FOREIGN KEY (product_id) REFERENCES Products(product_id),
-    FOREIGN KEY (user_id) REFERENCES User(user_id)
-  )`;
+  // let ceateUser = `CREATE TABLE if not exists User(
+  //   user_id int(11) auto_increment,
+  //   user_name TEXT not null,
+  //   user_password varchar(255) not null,
+  //   PRIMARY KEY (user_id)
+  // )`;
+  // let createOrder = `CREATE TABLE if not exists Orders(
+  //   order_id int(11) auto_increment,
+  //   product_id int(11) not null,
+  //   user_id int(11) not null,
+  //   PRIMARY KEY (order_id),
+  //   FOREIGN KEY (product_id) REFERENCES Products(product_id),
+  //   FOREIGN KEY (user_id) REFERENCES User(user_id)
+  // )`;
 
   Connection.query(createProd, (err, results, fields) => {
     if (err) console.log(err);
@@ -118,17 +116,15 @@ app.get("/install", (req, res) => {
   Connection.query(creatPrice, (err, results, fields) => {
     if (err) console.log(err);
   });
-  Connection.query(ceateUser, (err, results, fields) => {
-    if (err) console.log(err);
-  });
-  Connection.query(createOrder, (err, results, fields) => {
-    if (err) console.log(err);
-  });
+  // Connection.query(ceateUser, (err, results, fields) => {
+  //   if (err) console.log(err);
+  // });
+  // Connection.query(createOrder, (err, results, fields) => {
+  //   if (err) console.log(err);
+  // });
   res.end(message);
   console.log("Table Created");
 });
-
-
 
 // Send POST req. from HTML Form to INSERT data into our table in our DB.
 
@@ -170,11 +166,7 @@ Question 3: Create an HTML file called, “index.html” with a form to populate
 //   res.end("You are good to go!");
 // });
 
-
-
-
 //using the latest built-in express method
-
 
 app.use(express.json());
 app.use(
@@ -184,26 +176,65 @@ app.use(
 );
 app.post("/addiphones", (req, res) => {
   console.table(req.body);
-  const { pr_url, pr_name } = req.body;
+  const {
+    pr_url,
+    pr_name,
+    pr_brief,
+    pr_desc,
+    pr_img,
+    pr_link,
+    pr_price,
+    pr_range,
+  } = req.body;
   // let Url = req.body.pr_url;
   // let Name = req.body.pr_name;
   //   let Name = req.body.pr_name;
-   // const Url = req.body.Url
+  // const Url = req.body.Url
 
   let insertProd = `INSERT INTO Products (product_url, product_name) VALUES (?, ?)`;
-  Connection.query(insertProd, [pr_url, pr_name], (err, results, fields) => {
-    if (err) console.log(`Error Found: ${err}`)
-     console.table(results)
-  })
-
-  const {pr_id, pr_brief, pr_desc, pr_img, pr_link } = req.body;
-  console.log(req.body)
+  // ("${product_url}")
   let insertProdDesc = `INSERT INTO ProductDescription (product_id, product_brief_descrption, product_description, product_img, product_link) VALUES (?, ?, ?, ?, ?)`;
-  Connection.query(insertProdDesc, [pr_id, pr_brief, pr_desc, pr_img, pr_link], (err, results, fields) => {
-    if (err) console.log(`Error Found: ${err}`)
-     console.table(results)
-  })
 
-  res.end("Data Inserted Successfully")
+  let insertPrice = `INSERT INTO ProductPrice (product_id, starting_price, price_range) VALUES (?, ?, ?)`;
+
+  Connection.query(insertProd, [pr_url, pr_name], (err, results, fields) => {
+    if (err) console.log(`Error Found: ${err}`);
+    console.table(results);
+
+    const id = results.insertId;
+    console.log("id from products table", id);
+
+    Connection.query(
+      insertProdDesc,
+      [id, pr_brief, pr_desc, pr_img, pr_link],
+      (err, results, fields) => {
+        if (err) console.log(`Error Found: ${err}`);
+        console.table(results);
+      }
+    );
+    Connection.query(
+      insertPrice,
+      [id, pr_price, pr_range],
+      (err, results, fields) => {
+        if (err) console.log(`Error Found: ${err}`);
+        console.table(results);
+      }
+    );
+    console.log(req.body);
+  });
+
+  res.end("Data Inserted Successfully");
 });
 
+// Retrieve Data from the Database
+
+app.get("/get-info", (req, res) => {
+  Connection.query(
+    "SELECT * FROM Products JOIN ProductDescription JOIN ProductPrice ON Products.product_id = ProductDescription.product_id AND Products.product_id = ProductPrice.product_id",
+    (err, results, fields) => {
+      console.log(results)
+      if (err) console.log("Error During Selection", err);
+      res.send(results);
+    }
+  );
+});
