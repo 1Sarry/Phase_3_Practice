@@ -5,14 +5,13 @@ var cors = require("cors");
 
 var app = express();
 
-const options ={
-  origin: [
-    "http://localhost:4000",
-    "https://www.apple.com",
-  ]
-}
+// const corsOption = {
+//   origin: ["http://localhost:4000", "https://www.apple.com"],
+// };
 
-app.use(cors());
+app.use(cors()); // Publicly available
+
+//app.use(cors(corsOption)); // made available only for requests from the specified url
 
 /*
 Question 1: Create a MySQL database by the name "myDB" and create a database user by
@@ -30,9 +29,7 @@ const Connection = mysql.createConnection({
   host: "localhost",
   user: "myDBuser",
   password: "123",
-  database: "db6",
-
-  
+  database: "iphone_db",
 });
 Connection.connect((err) => {
   if (err) {
@@ -231,10 +228,13 @@ app.post("/addiphones", (req, res) => {
 app.get("/get-info", (req, res) => {
   Connection.query(
     "SELECT * FROM Products JOIN ProductDescription JOIN ProductPrice ON Products.product_id = ProductDescription.product_id AND Products.product_id = ProductPrice.product_id",
-    (err, results, fields) => {
-      console.log(results)
+    (err, rows, fields) => {
+      let iphones = {products: []};
+      iphones.products=rows;
+      var stringIphones = JSON.stringify(iphones)
+      console.log(rows);
       if (err) console.log("Error During Selection", err);
-      res.send(results);
+      res.end(stringIphones);
     }
   );
 });
