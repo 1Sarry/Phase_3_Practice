@@ -32,7 +32,7 @@ const Iphone = () => {
           return (
             <div
               key={productData.product_url}
-              className="product-card row justify-content-center align-items-center h-100 mb-3 pt-5 w-80"
+              className="product-card row justify-content-center align-items-center h-100 m-5 pt-5 w-80"
             >
               <div className={`left col-sm-12 col-md-6 order-${order2}`}>
                 <div className="prod-title">
