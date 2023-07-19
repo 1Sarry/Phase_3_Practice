@@ -1,0 +1,16 @@
+.prod-card-wrapper{
+    max-width: 1100px;
+    width: 100%;
+    margin: auto;
+}
+
+.prod-img img{
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+
+}

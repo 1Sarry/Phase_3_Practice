@@ -1,20 +1,28 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router";
 import { Link } from "react-router-dom";
-import "./Iphone.css"
 
-const Iphone = () => {
-  const [products, setProducts] = useState([]);
+const ProductDetail = () => {
+  const [product, setProduct] = useState([]);
+  const { id } = useParams();
+  //console.log(id)
 
   useEffect(() => {
     fetch("http://localhost:4000/get-info")
       .then((res) => res.json())
       .then((data) => {
-        setProducts(data.products);
+        const productDetails = data.products;
+        // console.log(productDetails)
+        const singleProduct = productDetails.filter(
+          (product) => product.product_url === id
+        );
+        setProduct(singleProduct);
       })
       .catch(() => console.log("Error: Unable to fetch "));
-  }, []);
-  console.log(products);
-  let flip = true;
+  }, [id]);
+
+  console.log(product);
+
   return (
     <div>
       <div className="headlines  m-5 ">
@@ -22,22 +30,13 @@ const Iphone = () => {
         <h3>The Best for the Brightest</h3>
       </div>
       <div className="prod-card-wrapper ">
-        {products?.map((productData) => {
-          let order1 = 1;
-          let order2 = 2;
-          if (flip) {
-            order1 = 2;
-            order2 = 1;
-            flip = !flip;
-          } else {
-            flip = !flip;
-          }
+        {product?.map((productData) => {
           return (
             <div
               key={productData.product_url}
               className="product-card row justify-content-center align-items-center h-100 mb-3"
             >
-              <div className={`left col-sm-12 col-md-6 order-${order2}`}>
+              <div className= "left col-sm-12 col-md-6">
                 <div className="prod-title">
                   <h2 className="fs-1 fw-bold">{productData.product_name}</h2>
                 </div>
@@ -53,12 +52,9 @@ const Iphone = () => {
                 </div>
                 
                 <div className="link pt-3">
-                  <Link to={productData.product_url} className="link-primary ">
-                  Learn More
-                </Link>
                 </div>
               </div>
-              <div className={`right col-sm-12 col-md-6 order-${order1}`}>
+              <div className="right col-sm-12 col-md-6 ">
                 <div className="prod-img">
                   <img src={productData.product_img} alt="" />
                 </div>
@@ -71,4 +67,4 @@ const Iphone = () => {
   );
 };
 
-export default Iphone;
+export default ProductDetail;

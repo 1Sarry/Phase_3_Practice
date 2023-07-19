@@ -20,6 +20,7 @@ import Support from "./Pages/Support";
 import Watch from "./Pages/Watch";
 import { Erorr } from "./Pages/Erorr";
 import SharedLayout from "./Components/Common/SharedLayout";
+import ProductDetail from "./Components/ProductDetail/ProductDetail";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
       <Route path="/" element={<SharedLayout />}>
         <Route path="/" element={<Home />} />
         <Route path="/iphone" element={<Iphones />} />
+        <Route path="/iphone/:id" element={<ProductDetail />}/>
         <Route path="/mac" element={<MacPage />} />
         <Route path="/ipod" element={<Ipodpage />} />
         <Route path="/watch" element={<Watch />} />
